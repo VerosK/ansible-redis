@@ -14,4 +14,4 @@
 
 # Ensure Redis server is running
 - name: "Ensure Redis server is running"
-  action: service name={{ redis.yum.service }} state=started
+  action: service name={{ redis.yum.service }} enabled=yes state=started
