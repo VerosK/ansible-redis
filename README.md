@@ -13,7 +13,7 @@ The role contains tasks to install Redis server, with optionally the Redmon dash
 ## Requires
 
 1. Ansible 1.4 or higher
-2. Debian 7.3 (other deb-based distros should work too)
+2. Debian 7.3 (other deb-based distros should work too) || Centos 6.x
 3. Vagrant (optional)
 
 ## Usage
@@ -21,8 +21,11 @@ The role contains tasks to install Redis server, with optionally the Redmon dash
 ### Get the code
 
 ```bash
-$ git clone git@github.com:ICTO/ansible-redis.git
+$ git clone git@github.com:verosk/ansible-redis.git
+# original version
+# $ git clone git@github.com:ICTO/ansible-redis.git
 ```
+
 
 ### Create the playbook file
 

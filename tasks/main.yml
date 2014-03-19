@@ -1,7 +1,12 @@
 ---
-# Install Redis
-- include: redis_deb.yml tags=redis
+- name: "Install Redis"
+  include: redis_deb.yml tags=redis
   when: ansible_distribution in [ 'Debian', 'Ubuntu' ]
+
+- name: "Install REDIS RPM"
+  include: redis_yum.yml tags=redis
+  when: ansible_distribution in [ 'CentOS' ]
+
 
 # Install Redmon dashboard
 - include: redmon.yml tags=redis

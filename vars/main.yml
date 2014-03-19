@@ -3,6 +3,11 @@ redis:
   deb:
     package: 'redis-server'
     service: 'redis-server'
+    config: '/etc/redis/redis.conf'
+  yum:
+    package: redis
+    service: redis
+    config: '/etc/redis.conf'
 
 redmon:
   service: 'redmon'

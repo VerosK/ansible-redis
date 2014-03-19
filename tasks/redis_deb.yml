@@ -4,10 +4,12 @@
   sudo: yes
   action: ${ansible_pkg_mgr} pkg={{ redis.deb.package }} state=latest update-cache=yes
 
+- set_fact: redis_service={{ redis.deb.service }}
+
 # Bind Redis server to all interfaces
 - name: "Bind Redis server to all interfaces"
   sudo: yes
-  action: lineinfile dest=/etc/redis/redis.conf state=present regexp="^#?bind" line="#bind 127.0.0.1"
+  action: lineinfile dest={{ redis.deb.config }} state=present regexp="^#?bind" line="#bind 127.0.0.1"
   notify:
     - "Restart Redis"
 
