@@ -8,16 +8,3 @@ redis:
     package: redis
     service: redis
     config: '/etc/redis.conf'
-
-redmon:
-  service: 'redmon'
-  deb:
-    dependencies:
-      - 'git'
-      - 'ruby1.9.1'
-      - 'ruby1.9.1-dev'      
-      - 'g++'
-  gems:
-    - 'bundler'
-    - 'redmon'
-  bin: '/usr/local/bin/redmon'

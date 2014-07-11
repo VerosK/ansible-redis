@@ -1,8 +1,7 @@
 ---
 # Install Redis server
 - name: "Install Redis server"
-  sudo: yes
-  action: ${ansible_pkg_mgr} pkg={{ redis.yum.package }} state=present enablerepo=epel
+  action: "{{ansible_pkg_mgr}} pkg={{ redis.yum.package }} state=present enablerepo=epel"
 
 - set_fact: redis_service={{ redis.yum.service }}
 

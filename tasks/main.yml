@@ -6,8 +6,3 @@
 - name: "Install REDIS RPM"
   include: redis_yum.yml tags=redis
   when: ansible_distribution in [ 'CentOS' ]
-
-
-# Install Redmon dashboard
-- include: redmon.yml tags=redis
-  when: with_redmon
